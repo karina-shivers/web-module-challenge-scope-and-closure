@@ -30,11 +30,11 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  the second one has a simple closure
   2. Which of the two uses a closure? How can you tell?
-  
+    counter2 code
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  count1 if u wanted it to stop after a certain number.
 */
 
 // counter1 code
@@ -64,9 +64,9 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
-}
+function inning(){
+return Math.floor(math.random()*math.floor(3));
+
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -83,8 +83,16 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(inningCB,innings){
+ let homeScore = 0;
+let awayScore = 0;
+for (i = 0; i < innings; i++) {
+  homeScore = homeScore + inningCB;
+  awayscore = awayScore + inningCB; }
+return {
+  home : homeScore,
+  away : awayScore
+}
 }
 
 
@@ -147,8 +155,22 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 10 - Home 10"
 ] */
 // NOTE: There is no test associated with this code; if your output matches the given example, consider it complete!
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningscoreCB,inningCB,NumInnings) {
+  const ScorebyInning = [];
+  let HomeScore = 0;
+let awayScore = 0;
+for (i =0; i < NumInnings; i++)
+{
+  const currentInning = inningscoreCB(inningscoreCB);
+  HomeScore = HomeScore + currentInning.Home, 
+  awayScore = awayScore + currentInning.away, 
+  ScorebyInning.push('Inning ${i +1')};
+  away ${currentInning.away} - home ${currentInning.home};
+
+if (HomeScore === awayscore) { ScorebyInning.push ('this game will require extra innings') away 
+$({'awayscore} - home ${Homescore}: ');
+}
+return ScorebyInning;
 }
 
 
